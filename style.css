@@ -10,8 +10,9 @@
 }
 
 .mainHeading{
-    font-size: 2.2rem;
+    font-size: 2.9rem;
     margin-bottom: 0.625rem;
+    font-weight: 400;
 }
 
 .header{
@@ -36,48 +37,22 @@
     text-decoration: none;
 }
 
-.form-group{
-   
-    width: 50rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 auto;
-    margin-left: 14.375rem;
-}
 
-#form{
 
-}
-
-.form-group input{
-    height: 38px;
-    padding: 6px 10px;
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-}
 
 #submit_btn{
-    /* display: inline-block; */
-    height: 38px;
-    padding: 0 30px;
-    color: #555;
-    text-align: center;
+    
+    width: 200px;
     font-size: 11px;
     font-weight: 600;
     line-height: 38px;
     letter-spacing: .1rem;
     text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
     color: #FFF;
     background-color: #33C3F0;
-    border-color: #33C3F0;
     border-radius: 4px;
     border: 1px solid #bbb;
     cursor: pointer;
-   margin-top: 50px;
+  
 }
+
