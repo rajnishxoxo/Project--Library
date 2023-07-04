@@ -11,22 +11,15 @@ function addBookToLibrary() {
   let titleName = document.getElementById("title").value;
   let authorName = document.getElementById("author").value;
   let noOfPages = document.getElementById("pages").value;
-
   let read = document.getElementById('read');
 
   if (titleName.value == "" || authorName.value == "" || noOfPages == "") {
     alert("enter the Value please");
   }
 
-  if(read.checked){
-
-    read.value===true;
-    let newBook = new Book(titleName, authorName, noOfPages,read);
+  let newBook = new Book(titleName, authorName, noOfPages,read);
 
     myLibrary.push(newBook);
-  }
-
-  
 
   // console.log(`${titleName} ${authorName} ${noOfPages}`)
 }
