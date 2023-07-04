@@ -1,9 +1,10 @@
 let myLibrary = []; //to store Books
 
-function Book(title, author, noOfPages) {
+function Book(title, author, noOfPages ,read) {
   this.title = title;
   this.author = author;
   this.noOfPages = noOfPages;
+  this.read = read
 }
 
 function addBookToLibrary() {
@@ -11,13 +12,21 @@ function addBookToLibrary() {
   let authorName = document.getElementById("author").value;
   let noOfPages = document.getElementById("pages").value;
 
+  let read = document.getElementById('read');
+
   if (titleName.value == "" || authorName.value == "" || noOfPages == "") {
     alert("enter the Value please");
-  } else {
-    let newBook = new Book(titleName, authorName, noOfPages);
+  }
+
+  if(read.checked){
+
+    read.value===true;
+    let newBook = new Book(titleName, authorName, noOfPages,read);
 
     myLibrary.push(newBook);
   }
+
+  
 
   // console.log(`${titleName} ${authorName} ${noOfPages}`)
 }
@@ -41,7 +50,7 @@ function render() {
   for (let i = 0; i < myLibrary.length; i++) {
     let myBook = myLibrary[i];
 
-    libraryEl.appendChild(bookEl);
+    console.log(myBook.title)
   }
 }
 
