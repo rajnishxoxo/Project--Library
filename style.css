@@ -70,7 +70,7 @@ margin-bottom: 60px;
 #new-book-form{
  display: flex;
  flex-direction: column;  
- /* display: none;  */
+ display: none; 
 }
 
 input{
@@ -104,4 +104,31 @@ label{
 
     margin-top: 10px;
   
+}
+
+#libraryEl{
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+
+.card{
+display: flex;
+overflow: hidden;
+position: relative;
+text-align: left;
+left: 18%;
+  /* top: 50%; */
+border-radius: 0.5rem;
+width: 290px;
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+background-color: black;
+color: white;
+ height: 250px;
+
+}
+
+.card>p{
+    font-size: 20px;
+    
 }
