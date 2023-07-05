@@ -62,11 +62,23 @@ function render() {
 
   bookEl.setAttribute("class", "card");
 
+  let removeBookButton = document.createElement('button');
+  removeBookButton.addEventListener('click' , ()=>{
+    console.log("hello")
+    libraryEl.removeChild(bookEl)
+  })
+
   for (let i = 0; i < myLibrary.length; i++) {
     let myBook = myLibrary[i];
     headingElement.textContent = myBook.title;
     authorNameElement.textContent = myBook.author;
     pagesInfo.textContent = myBook.noOfPages;
+
+    
+
+    removeBookButton.textContent="Remove Book";
+
+    removeBookButton.setAttribute('id' , "removeBookButton")
 
     console.log(headingElement);
     console.log(authorNameElement);
@@ -75,6 +87,8 @@ function render() {
     bookEl.append(headingElement);
     bookEl.append(authorNameElement);
     bookEl.append(pagesInfo);
+
+    bookEl.append(removeBookButton)
 
     libraryEl.append(bookEl);
   }

@@ -140,3 +140,10 @@ background-color:#fffbfb;
 .card>p{
     font-size: 15px;
 }
+
+#removeBookButton{
+    background-color: #ff9c9c;
+    padding: 10px 15px;
+    border-radius: 8px;;
+    transition: filter 0.15s ease-in-out;
+}
