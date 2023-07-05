@@ -1,28 +1,69 @@
 let myLibrary = []; //to store Books
 
-function Book(title, author, noOfPages ,read) {
+function Book(title, author, noOfPages, read) {
   this.title = title;
   this.author = author;
   this.noOfPages = noOfPages;
-  this.read = read
+  this.read = read;
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(title,author,pages) {
+
+  let read = document.getElementById("read");
+
+  if ((read = read.checked)) {
+    let newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook)
+  } else {
+    read = false;
+    let newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook)
+  }
+  console.log(myLibrary)
+}
+
+
+
+
+let submitBookDetailBtn = document.getElementById("submit_btn2");
+
+submitBookDetailBtn.addEventListener("click", function () {
+
+  console.log("clicked");
+  event.preventDefault();
+
   let titleName = document.getElementById("title").value;
   let authorName = document.getElementById("author").value;
   let noOfPages = document.getElementById("pages").value;
-  let read = document.getElementById('read');
 
-  if (titleName.value == "" || authorName.value == "" || noOfPages == "") {
+  if (
+    titleName.value == "" ||
+    authorName.value == "" ||
+    noOfPages == ""
+   
+  ) {
     alert("enter the Value please");
   }
+  addBookToLibrary(titleName,authorName,noOfPages);
+  
 
-  let newBook = new Book(titleName, authorName, noOfPages,read);
 
-    myLibrary.push(newBook);
+  if (myLibrary.length != 0) {
+    displayForm.style.display = "none";
+  } else {
+    displayForm.style.display = "block";
+  }
 
-  // console.log(`${titleName} ${authorName} ${noOfPages}`)
-}
+  const form = document.getElementById('new-book-form');
+
+  form.reset();
+
+});
+
+
+
+
+
 
 const addNewBookButton = document.getElementById("submit_btn");
 
@@ -38,30 +79,13 @@ function render() {
   const libraryEl = document.getElementById("libraryEl");
   let bookEl = document.createElement("div");
 
-  bookEl.setAttribute("class" ,"card")
+  bookEl.setAttribute("class", "card");
 
   for (let i = 0; i < myLibrary.length; i++) {
     let myBook = myLibrary[i];
 
-    console.log(myBook.title)
+    console.log(myBook.title);
   }
 }
 
-let submitBookDetailBtn = document.getElementById("submit_btn2");
 
-submitBookDetailBtn.addEventListener("click", function (event) {
-  addBookToLibrary();
-  event.preventDefault();
-  console.log(myLibrary);
-  let titleName = (document.getElementById("title").value = "");
-  let authorName = (document.getElementById("author").value = "");
-  let noOfPages = (document.getElementById("pages").value = "");
-
-  if (myLibrary.length != 0) {
-    displayForm.style.display = "none";
-  } else {
-    displayForm.style.display = "block";
-  }
-
-  render();
-});
