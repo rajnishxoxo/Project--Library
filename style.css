@@ -144,6 +144,44 @@ background-color:#fffbfb;
 #removeBookButton{
     background-color: #ff9c9c;
     padding: 10px 15px;
-    border-radius: 8px;;
+    border-radius: 8px;
+    width: 60%;
+    margin: 0 auto;
     transition: filter 0.15s ease-in-out;
 }
+
+#changeReadStaus{
+   
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 60%;
+    margin: 0 auto;
+    transition: filter 0.15s ease-in-out;
+}
+
+#changeReadStaus>button{
+    font-size: 20px;
+}
+
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .fa-github {
+        font-size: 24px;
+        color: black
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .fa-github:hover {
+        transform: rotate(360deg) scale(1.2);
+      }

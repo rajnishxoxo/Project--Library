@@ -7,10 +7,14 @@ function Book(title, author, noOfPages, read) {
   this.read = read;
 }
 
-Book.prototype.changereadStatus=function(){
+Book.prototype.toggle=function(){
   this.read = !this.read
 }
 
+// function toggle(index){
+//   myLibrary[index].changeReadStatus();
+  
+// }
 
 
 function addBookToLibrary(title, author, pages) {
@@ -39,6 +43,7 @@ submitBookDetailBtn.addEventListener("click", function () {
 
   if (titleName.value == "" || authorName.value == "" || noOfPages == "") {
     alert("enter the Value please");
+    return;
   }
   addBookToLibrary(titleName, authorName, noOfPages);
 
@@ -90,18 +95,33 @@ function render() {
 
     if(myBook.read==true){
       changeReadStatus.textContent = "Read"
+      changeReadStatus.style.background="green"
     }else{
       changeReadStatus.textContent = "Not Read"
+      changeReadStatus.style.background="red"
     }
 
 
     changeReadStatus.addEventListener('click' ,()=>{
-    
+
+      if(myBook.read==true){
+        myBook.toggle();
+        changeReadStatus.textContent = "Not Read"
+        changeReadStatus.style.background="red"
+      }else if(myBook.read==false){
+        myBook.toggle();
+        changeReadStatus.textContent = "Read"
+        changeReadStatus.style.background="green"
+      }
+
+      
     })
 
     //
 
-    removeBookButton.setAttribute('id' , "removeBookButton")
+    removeBookButton.setAttribute('id' , "removeBookButton");
+
+    changeReadStatus.setAttribute('id' ,'changeReadStaus')
 
     console.log(headingElement);
     console.log(authorNameElement);
