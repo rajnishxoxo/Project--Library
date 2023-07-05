@@ -7,6 +7,15 @@ function Book(title, author, noOfPages, read) {
   this.read = read;
 }
 
+Book.prototype.changereadStatus=function(){
+  this.read = !this.read
+}
+
+function toggleRead(index){
+  myLibrary[index].changereadStatus()
+  render();
+}
+
 function addBookToLibrary(title, author, pages) {
   let read = document.getElementById("read");
 
@@ -63,9 +72,15 @@ function render() {
   bookEl.setAttribute("class", "card");
 
   let removeBookButton = document.createElement('button');
+  let changeReadStatus = document.createElement('button');
+  
   removeBookButton.addEventListener('click' , ()=>{
-    console.log("hello")
+    
     libraryEl.removeChild(bookEl)
+  })
+
+  changeReadStatus.addEventListener('click' ,()=>{
+    toggleRead();
   })
 
   for (let i = 0; i < myLibrary.length; i++) {
@@ -78,6 +93,16 @@ function render() {
 
     removeBookButton.textContent="Remove Book";
 
+    if(myBook.read==true){
+      changeReadStatus.textContent = "Read"
+    }else{
+      changeReadStatus.textContent = "Not Read"
+    }
+
+
+
+    //
+
     removeBookButton.setAttribute('id' , "removeBookButton")
 
     console.log(headingElement);
@@ -89,6 +114,7 @@ function render() {
     bookEl.append(pagesInfo);
 
     bookEl.append(removeBookButton)
+    bookEl.append(changeReadStatus)
 
     libraryEl.append(bookEl);
   }
