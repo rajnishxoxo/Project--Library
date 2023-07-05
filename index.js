@@ -57,9 +57,8 @@ function render() {
   let headingElement = document.createElement("h3");
 
   let authorNameElement = document.createElement("p");
-  
+
   let pagesInfo = document.createElement("p");
- 
 
   bookEl.setAttribute("class", "card");
 
@@ -68,8 +67,6 @@ function render() {
     headingElement.textContent = myBook.title;
     authorNameElement.textContent = myBook.author;
     pagesInfo.textContent = myBook.noOfPages;
-  
-
 
     console.log(headingElement);
     console.log(authorNameElement);
