@@ -11,10 +11,7 @@ Book.prototype.changereadStatus=function(){
   this.read = !this.read
 }
 
-function toggleRead(index){
-  myLibrary[index].changereadStatus()
-  render();
-}
+
 
 function addBookToLibrary(title, author, pages) {
   let read = document.getElementById("read");
@@ -79,9 +76,7 @@ function render() {
     libraryEl.removeChild(bookEl)
   })
 
-  changeReadStatus.addEventListener('click' ,()=>{
-    toggleRead();
-  })
+  
 
   for (let i = 0; i < myLibrary.length; i++) {
     let myBook = myLibrary[i];
@@ -100,6 +95,9 @@ function render() {
     }
 
 
+    changeReadStatus.addEventListener('click' ,()=>{
+    
+    })
 
     //
 
