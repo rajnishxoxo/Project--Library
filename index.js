@@ -145,3 +145,5 @@ const displayForm = document.getElementById("new-book-form");
 addNewBookButton.addEventListener("click", function () {
   displayForm.style.display = "block";
 });
+
+console.log('branch')
